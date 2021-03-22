@@ -1,0 +1,33 @@
+.siteHeader {
+   &__content {
+      display: grid;
+      grid-template-columns: 400px 1fr;
+      justify-content: space-between;
+      align-items: center;
+      margin: 2em 5%;
+      .content__text {
+         font-family: 'Montserrat', sans-serif;
+         h1 {
+            color: #1F2431;
+            font-size: 36px;
+            font-weight: 700;
+         }
+         p {
+            max-width: 320px;
+            color: #82899B;
+            padding: 1.5em 0 2.5em;
+            font-weight: 300;
+         }
+         a {
+            background-color: #315EFB;
+            padding: 1.042em 4.654em;
+            border-radius: 51px;
+            font-size: 12px;
+            font-weight: 500;
+            color: #FFF;
+            text-decoration: none;
+            text-transform: uppercase;
+         }
+      }
+   }
+}

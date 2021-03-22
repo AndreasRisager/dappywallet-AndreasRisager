@@ -1,0 +1,35 @@
+.primaryNav {
+   display: flex;
+   justify-content: space-between;
+   font-family: 'Montserrat', sans-serif;
+   align-items: center;
+   padding: 1em;
+   img {
+      max-width: 120px;
+      height: auto;
+   }
+   .primaryNav__pages {
+      display: flex;
+      align-items: center;
+      li {
+         list-style: none;
+         padding: 1em;
+         white-space: nowrap;
+         a {
+            text-decoration: none;
+            color: #1F2431;
+            font-size: 1em;
+         }
+      }
+   }
+   .primaryNav__socials {
+      display: flex;
+      list-style: none;
+      a {
+         text-decoration: none;
+         color: #1F2431;
+         font-size: 1.5em;
+         padding: 0.3em;
+      }
+   }
+}
