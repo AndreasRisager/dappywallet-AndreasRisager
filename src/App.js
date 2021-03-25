@@ -4,9 +4,6 @@ import Socials from "./components/Socials";
 import "./style.scss";
 import Newsletter from "./components/Newsletter";
 
-
-
-
 export default function App() {
 	return (
 		<>
