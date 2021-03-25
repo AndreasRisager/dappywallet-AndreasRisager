@@ -2,10 +2,10 @@ import { useState } from "react";
 import NetlifyForm from 'react-ssg-netlify-forms';
 
 function formValidater(value) {
-  var x = value.email;
+  var input = document.querySelector("input[type='email']");
+  var x = input.value;
 	var atposition=x.indexOf("@");
 	var dotposition=x.lastIndexOf(".");
-  var input = document.querySelector("input[type='email']");
 	if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){
     input.style.border="1px solid red";
 		return false;
@@ -16,10 +16,10 @@ function formValidater(value) {
 }
 
 export default function Newsletter() {
-  const handleChange = e => setFormValues({email: e.target.value});
+  const handleChange = e => setFormValues({ ...formValues, [e.target.name]: e.target.value });
 	const [formValues, setFormValues] = useState({email: ""});
   return (
-    <NetlifyForm formName="Newsletter" formValues={formValues} preSubmit={() => formValidater(formValues)}>
+    <NetlifyForm formName="Newsletter" formValues={formValues} preSubmit={formValidater}>
       <input type="hidden" name="form-name" value="Newsletter" />
       <input type="email" name="email" value={formValues.email} onChange={handleChange} required placeholder="Your e-mail" />
       <button type="submit">Subscribe</button>
