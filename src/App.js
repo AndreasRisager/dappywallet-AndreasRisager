@@ -4,8 +4,6 @@ import Socials from "./components/Socials";
 import "./style.scss";
 
 function formValidater(e) {
-	e.preventDefault();
-
 	var x=e.target.form.email.value;
 	var atposition=x.indexOf("@");
 	var dotposition=x.lastIndexOf(".");
@@ -108,7 +106,7 @@ export default function App() {
 					<form name="Newsletter" data-netlify="true">
 						<input type="hidden" name="Newsletter" value="Newsletter" />
 						<input type="email" name="email" placeholder="Your e-mail" />
-						<button type="submit" onClick={(e) => formValidater(e)}>Subscribe</button>
+						<button type="submit" onSubmit={(e) => formValidater(e)}>Subscribe</button>
 					</form>
 				</div>
 			</footer>
