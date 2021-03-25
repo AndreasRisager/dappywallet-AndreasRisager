@@ -104,7 +104,7 @@ export default function App() {
 				<div className="siteFooter__col">
 					<h3>Newsletter</h3>
 					<p className="siteFooter__text">Please enter your e-mail if want to receive updates.</p>
-					<form name="Newsletter" method="POST" data-netlify="true">
+					<form name="Newsletter" method="POST" data-netlify-recaptcha="true" data-netlify="true">
 						<input type="hidden" name="Newsletter" value="Newsletter" />
 						<input type="email" name="email" placeholder="Your e-mail" />
 						<button type="submit">Subscribe</button>
