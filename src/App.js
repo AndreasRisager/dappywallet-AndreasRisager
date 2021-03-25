@@ -2,22 +2,10 @@ import Roadmap from "./components/Roadmap";
 import SiteHeader from "./components/SiteHeader";
 import Socials from "./components/Socials";
 import "./style.scss";
-import NetlifyForm from 'react-ssg-netlify-forms'
+import Newsletter from "./components/Newsletter";
 
-function formValidater(e) {
-	var x=e.target.form.email.value;
-	var atposition=x.indexOf("@");
-	var dotposition=x.lastIndexOf(".");
-	if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){
-		e.target.form.email.focus();
-		e.target.form.email.style.border = "2px solid red";
-		e.target.form.email.style.outlineColor = "red";
-		return false;
-  }
-	e.target.form.email.style.border = "1px solid green";
-	e.target.form.email.style.outlineColor = "green";
-	return true;
-}
+
+
 
 export default function App() {
 	return (
@@ -105,12 +93,7 @@ export default function App() {
 				<div className="siteFooter__col">
 					<h3>Newsletter</h3>
 					<p className="siteFooter__text">Please enter your e-mail if want to receive updates.</p>
-					<NetlifyForm formName="Newsletter" formValues={() => document.forms.Newsletter.email.value} preSubmit={formValidater} ></NetlifyForm>
-					<form name="Newsletter" method="POST" data-netlify="true" noValidate>
-						<input type="hidden" name="form-name" value="Newsletter" />
-						<input type="email" name="email" placeholder="Your e-mail" />
-						<button type="submit">Subscribe</button>
-					</form>
+					<Newsletter />
 				</div>
 			</footer>
 		</>
