@@ -3,6 +3,22 @@ import SiteHeader from "./components/SiteHeader";
 import Socials from "./components/Socials";
 import "./style.scss";
 
+function formValidater(e) {
+	e.preventDefault();
+
+	var x=e.target.form.email.value;
+	var atposition=x.indexOf("@");
+	var dotposition=x.lastIndexOf(".");
+	if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){
+		e.target.form.email.focus();
+		e.target.form.email.style.border = "2px solid red";
+		e.target.form.email.style.outlineColor = "red";
+  } else {
+		e.target.form.email.style.border = "1px solid green";
+		e.target.form.email.style.outlineColor = "green";
+	}
+}
+
 export default function App() {
 	return (
 		<>
@@ -89,9 +105,10 @@ export default function App() {
 				<div className="siteFooter__col">
 					<h3>Newsletter</h3>
 					<p className="siteFooter__text">Please enter your e-mail if want to receive updates.</p>
-					<form>
+					<form name="Newsletter" data-netlify="true">
+						<input type="hidden" name="Newsletter" value="Newsletter" />
 						<input type="email" name="email" placeholder="Your e-mail" />
-						<button type="submit">Subscribe</button>
+						<button type="submit" onClick={(e) => formValidater(e)}>Subscribe</button>
 					</form>
 				</div>
 			</footer>
