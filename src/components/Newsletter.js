@@ -2,7 +2,6 @@ import { useState } from "react";
 import NetlifyForm from 'react-ssg-netlify-forms';
 
 function formValidater() {
-
   var input = document.querySelector("input[type='email']");
   var x = input.value;
 	var atposition=x.indexOf("@");
@@ -20,8 +19,10 @@ function formValidater() {
 }
 
 export default function Newsletter() {
-  const handleChange = e => setFormValues({ ...formValues, [e.target.email]: e.target.value });
+  const handleChange = e => setFormValues({ ...formValues, [e.target.name]: e.target.value });
 	const [formValues, setFormValues] = useState({email: ""});
+
+  console.log(formValues);
   
   return (
     <NetlifyForm formName="Newsletter" formValues={formValues} preSubmit={formValidater}>
