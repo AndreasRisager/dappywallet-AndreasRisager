@@ -4,13 +4,13 @@ import Socials from "./Socials";
 function openMenu(e) {
 	if (!e.target.classList.contains("menuButton--active")) {
 		e.target.classList.add("menuButton--active");
-		document.querySelectorAll(".primaryNav__pages li").forEach(function(list){
+		document.querySelectorAll(".primaryNav__pages li").forEach(function (list) {
 			list.style.display = "block";
 		});
 		return;
 	}
 	e.target.classList.remove("menuButton--active");
-	document.querySelectorAll(".primaryNav__pages li").forEach(function(list){
+	document.querySelectorAll(".primaryNav__pages li").forEach(function (list) {
 		list.style.display = "none";
 	});
 }

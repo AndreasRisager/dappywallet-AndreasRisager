@@ -59,7 +59,7 @@ img {
 			&__card {
 				display: grid;
 				grid-template-rows: auto 2em 1fr;
-				&:nth-child(3n+3) .line {
+				&:nth-child(3n + 3) .line {
 					display: none;
 				}
 			}
